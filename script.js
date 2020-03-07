@@ -17,39 +17,45 @@ function generatePassword() {
     return "Please enter a NUMBER between 8 and 128.";    
   }
 
-
   var addLower = confirm("Do you want to include lowercase letters in your password?");
 
   if (addLower){
-    var setLower = function () {
-      return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-    }
-    console.log (setLower); 
+    var addLower = "abcdefghijklmnopqrstuvwxyz";
   }
 
   var addUpper = confirm("Do you want to include uppercase letters in your password?");
 
   if (addUpper){
-    
+    var addUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   }
 
   var addNumber = confirm("Do you want to include numbers in your password?");
 
   if (addNumber){
-    
+    var addNumber = "0123456789";
   }
 
   var addSymbol = confirm("Do you want to include symbols in your password?");
 
   if (addSymbol){
-     
+    var addSymbol = "!#$%&()*+,-./:;<=>?@[]^_`{|}~";
   }
+
+  var string = ""; 
+  var charset = string.concat;
+  var passwordChar = length;
+  retVal = "";
+  for (var i = 0; n = passwordChar; ++i) {
+    retVal += charset.charAt(Math.floor(Math.random() * n));
+  }
+  return retVal;
 }
 
+
 //Add function to generate random lowercase letters
-// function getRandomLower() {
-//   return String.fromCharCode(Math.floor(Math.random() * 26) + 97); 
-// }
+function getRandomLower() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97); 
+}
 
 //Add function to generate random uppercase letters
 function getRandomUpper() {
@@ -75,21 +81,6 @@ function getRandomSymbol() {
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
-// function generatePassword() {
-//     var string = ""; 
-//     var length = charset.length,
-//         retVal = "";
-//     for (var i = 0; i < [user-defined-password-length-variable]; ++i) {
-//         retVal += charset.charAt(Math.floor(Math.random() * length));
-//     }
-//     return retVal;
-// }
-  
-
-// for(var i = 0; i < 10; i++){
-    
-//   }
-
 
 
 function writePassword() {
@@ -103,7 +94,7 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// console.log(getRandomLower());
+console.log(getRandomLower());
 console.log(getRandomUpper());
 console.log(getRandomNumber());
 console.log(getRandomSymbol());
